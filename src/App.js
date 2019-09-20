@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import AppBar from './AppBar/AppBar';
 
 class App extends Component {
   state = {}
   render() {
     return (
       <div>
-        <h1>Hello World</h1>
+        <AppBar/>
       </div>
     );
   }
