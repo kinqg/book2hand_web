@@ -1,14 +1,4 @@
-import React, { Component } from "react";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
 
-class AppBar extends Component {
-    state = {  }
-    render() {
-        return (
-            <div>
-                <h1>Happy World</h1>
-            </div>
-        )
-    }
-}
-
-export default AppBar;
