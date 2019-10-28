@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AppBar from './component/AppBar/SimpleAppBar';
+import EmailConfirm from './page/unlogin_page/process/EmailConfirmation'
 import {
   createMuiTheme,
   MuiThemeProvider,
@@ -23,6 +24,7 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
       <div>
         <AppBar/>
+        {/* <EmailConfirm/> */}
       </div>
       </MuiThemeProvider>
     );
