@@ -1,16 +1,15 @@
 import React from "react";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import AppBar from "@material-ui/core/AppBar";
-import { makeStyles } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
-import logo from "./images/MainTitleLogo";
-import MenuIcon from '@material-ui/icons/Menu';
-import { Grid, IconButton } from "@material-ui/core";
+import logo from "./images/MainTitleLogo.png";
+import Button from "@material-ui/core/Button";
+import PlainTextInput from "../../component/inputBox/PlainInputBox";
+import { Grid } from "@material-ui/core";
 
-
-const useStyles = makeStyles(theme => ({
+/*const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 5
+    flexGrow: 2
   },
   logoCard: isComputer =>
     isComputer
@@ -24,13 +23,14 @@ const useStyles = makeStyles(theme => ({
           marginTop: 10,
           marginBottom: 10
         },
-    menuButton: {
-        marginLeft:5
-    }
-}));
+  menuButton: {
+    marginLeft: theme.spacing(2),
+    marginRight: theme.spacing(10)
+  }
+}));*/
+
 
 export default function PreLoginAppBar() {
-  const classes = useStyles();
   const isComputer = useMediaQuery("(min-width:600px)");
   if (isComputer) {
     return (
@@ -39,33 +39,60 @@ export default function PreLoginAppBar() {
           <Toolbar>
             <Grid
               container
+              spacing={3}
               direction="row"
               justify="flex-start"
               alignItems="center"
             >
-              <IconButton
-                edge="start"
-                classesName={classes.menuButton}
-              >
-                  <MenuIcon/>
-              </IconButton>
-              
-              <img src={logo} alt="Book2handstore" />
+              <Grid item xs={2}>
+                <img
+                  position="static"
+                  src={logo}
+                  width="110px"
+                  alt="Book2handstore"
+                />
+              </Grid>
             </Grid>
-            
             <Grid
               container
               direction="row-reverse"
-              justify="flex-"
+              justify="flex-start"
               alignItems="center"
             >
-              
+              <Grid item xs={2}>
+                <Button variant="contained" color="secondary" onClick={()=>{/*TODO:LOGIN */}} size="small">
+                  Login
+                </Button>
+              </Grid>
+              <PlainTextInput width="20%" placeholder="password" />
+              <PlainTextInput width="20%" placeholder="username" />
             </Grid>
           </Toolbar>
         </AppBar>
       </div>
     );
   } else {
-    return;
+    return (
+      <div>
+        <AppBar position="sticky">
+          <Toolbar>
+            <Grid
+              container
+              spacing={1}
+              direction="row"
+              justify="flex-start"
+              alignItems="center"
+            >
+                <img
+                  position="static"
+                  src={logo}
+                  width="100px"
+                  alt="Book2handstore"
+                />
+            </Grid>
+          </Toolbar>
+        </AppBar>
+      </div>
+    );
   }
 }

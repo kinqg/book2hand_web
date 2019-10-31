@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import AppBar from './component/AppBar/SimpleAppBar';
-import EmailConfirm from './page/unlogin_page/process/EmailConfirmation'
+import AppBar from "./component/AppBar/PreLoginAppBar.js";
 import {
   createMuiTheme,
   MuiThemeProvider,
 } from "@material-ui/core/styles";
 
+
 const theme = createMuiTheme({
   palette: {
     primary: {
+      contrastText: '#fff',
       main: "#1E2758"
     },
     secondary: {
@@ -22,10 +23,7 @@ class App extends Component {
   render() {
     return (
       <MuiThemeProvider theme={theme}>
-      <div>
-        <AppBar/>
-        {/* <EmailConfirm/> */}
-      </div>
+      <AppBar/>
       </MuiThemeProvider>
     );
   }
