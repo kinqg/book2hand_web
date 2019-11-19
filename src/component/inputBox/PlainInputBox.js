@@ -33,6 +33,8 @@ export default function PlainInputBox(props) {
   return (
     <div className={classes.inputBox}>
       <InputBase
+        onChange={props.onChange}
+        value={props.value}
         fullWidth={true}
         placeholder={props.placeholder}
         classes={{
